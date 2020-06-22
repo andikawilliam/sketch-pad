@@ -1,4 +1,6 @@
+
 const body = document.querySelector('body');
+body.style.height = "100%";
 
 const menubar = document.createElement('div');
 menubar.setAttribute('id', 'menubar');
@@ -104,13 +106,31 @@ function getRandomColor() {
   return color;
 }
 
+function leftClickAddColor(event) {
+	body.addEventListener('click', addGridEvent)
+};
+
+function rightClickStopColor(event) {
+	body.addEventListener('contextmenu', function(e) {
+		e.preventDefault();
+		stopHoverColor();
+		return false;
+	}, false);
+};
+
+function stopHoverColor() {
+	grids.forEach(element => {
+    	element.removeEventListener('mouseenter', addHoverColor)
+  	});
+}
+
 body.appendChild(menubar);
 body.appendChild(gridContainer);
 menubar.appendChild(resetButton);
 menubar.appendChild(gridNumber);
 menubar.appendChild(changeGridButton);
 
-
 addMenubarEvents();
 addGrids();
-
+leftClickAddColor();
+rightClickStopColor();
