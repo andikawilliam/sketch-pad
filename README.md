@@ -4,7 +4,7 @@ This project is an exercise to learn the basics of event listeners and DOM manip
 The html file is empty, with all content being generated using Javascript. You can try this out if 
 you're starting out on javascript. Just follow the initial design.
 
-check it out live! ([Sketch Pad](https://vandercoder.github.io/sketch-pad/)
+check it out live! [Sketch Pad](https://vandercoder.github.io/sketch-pad/)
 
 ### Initial Design
 > Create a webpage with 16x16 grid of squares.  
