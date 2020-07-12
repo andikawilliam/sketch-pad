@@ -1,7 +1,8 @@
 # Sketch Pad
 
 This project is an exercise to learn the basics of event listeners and DOM manipulation using Javascript.
-The html file is empty, with all content being generated purely using Javascript. 
+The html file is empty, with all content being generated using Javascript. You can try this out if 
+you're starting out on javascript. Just follow the initial design.
 
 ### Initial Design
 > Create a webpage with 16x16 grid of squares.  
@@ -18,3 +19,7 @@ The html file is empty, with all content being generated purely using Javascript
 2. Add button to change the size of the grid
 3. Change into a random color instead of only one color
 4. Added left click and right click listener to turn on/off hover color
+
+### To be added
+1. Option to pick one color for sketch pad
+2. Center sketch pad
