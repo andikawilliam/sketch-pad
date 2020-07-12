@@ -1,25 +1,27 @@
-
 const body = document.querySelector('body');
 body.style.height = "100%";
+body.style['background-color'] = 'lightgray';
 
 const menubar = document.createElement('div');
 menubar.setAttribute('id', 'menubar');
 menubar.style.backgroundColor = 'orange';
 menubar.style.display = 'grid';
 menubar.style["grid-template-columns"] = '100px 200px 100px';
-menubar.style["grid-row-gap"] = "100px";
 
-menubar.style.margin = '1em';
+menubar.style.margin = 'auto';
+menubar.style["margin-bottom"] = '10px';
 menubar.style.padding = '5px';
-menubar.style.width = '500px';
+menubar.style.width = '400px';
 menubar.style.height = '40px';
 
 const resetButton = document.createElement('button');
+resetButton.setAttribute('id', 'reset_button');
 resetButton.classList.add('menu_option');
 resetButton.textContent = "Reset Color";
 
 const gridNumber = document.createElement('input');
 gridNumber.classList.add('menu_option');
+gridNumber.style.textAlign = 'right';
 gridNumber.textContent = 'Change grid size';
 
 const changeGridButton = document.createElement('button');
@@ -30,8 +32,14 @@ const gridContainer = document.createElement('div');
 gridContainer.setAttribute('id', 'grid_container');
 gridContainer.style.display = 'grid';
 gridContainer.style.border = 'thin solid black';
-gridContainer.style.width = '960px';
-gridContainer.style.height = '960px';
+gridContainer.style.width = `700px`;
+gridContainer.style.height = `700px`;
+gridContainer.style.margin = 'auto';
+
+const mainContainer = document.createElement('div');
+mainContainer.textContent = 'Right Click to turn off color. Left Click to turn on. Press key R to reset';
+mainContainer.style.margin = '10px';
+mainContainer.style['text-align'] = 'center';
 
 function addMenubarEvents() {
   resetButton.addEventListener('click', resetGrid);
@@ -44,6 +52,13 @@ function resetGrid(event) {
     element.style.backgroundColor = 'white';
     menubar.style.backgroundColor = 'white';
   });
+};
+
+window.addEventListener('keydown', inputKey);
+function inputKey(event) {
+  if (event.code != 'KeyR') return;
+  const key = document.querySelector('#reset_button');
+  key.click();
 };
 
 function setChangeGrid(event) {
@@ -124,8 +139,11 @@ function stopHoverColor() {
   	});
 }
 
+
+
 body.appendChild(menubar);
 body.appendChild(gridContainer);
+body.appendChild(mainContainer);
 menubar.appendChild(resetButton);
 menubar.appendChild(gridNumber);
 menubar.appendChild(changeGridButton);
